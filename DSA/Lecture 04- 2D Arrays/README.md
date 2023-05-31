@@ -155,7 +155,7 @@ function arrayPairSum(nums) {
 >
 > **Example:** >
 >
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4bd91cfa-d2b1-47b3-8197-a72e8dcfff4b%2Fv2.jpg?id=011c94c5-b725-4954-8821-3900e6c08ab4&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=510&userId=&cache=v2" style="display: inline-block; margin: 0 auto; max-height: 200px; max-width: 200px">
+> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4bd91cfa-d2b1-47b3-8197-a72e8dcfff4b%2Fv2.jpg?id=011c94c5-b725-4954-8821-3900e6c08ab4&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=510&userId=&cache=v2" style="height: 200px; width: 200px">
 >
 > - Input: n = 5
 > - Output: 2
