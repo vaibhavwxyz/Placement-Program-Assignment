@@ -91,7 +91,9 @@ function findDisappearedNumbers(nums1, nums2) {
 > **Example**
 >
 > - Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-> - Output: [[1,4,7],[2,5,8],[3,6,9]] > ![img](https://file.notion.so/f/s/a54805f4-c9b5-491c-a900-8e8a94062c79/iamge_v3.png?id=a588d9bb-578d-4c0f-b2fe-813f5225886b&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&expirationTimestamp=1685622146541&signature=qcZLVPFGrw2gNHKXpy3ZESoQuMtRF4LrfJJ1qVI5ibw&downloadName=iamge_v3.png)
+> - Output: [[1,4,7],[2,5,8],[3,6,9]]
+>
+> ![img](https://file.notion.so/f/s/a54805f4-c9b5-491c-a900-8e8a94062c79/iamge_v3.png?id=a588d9bb-578d-4c0f-b2fe-813f5225886b&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&expirationTimestamp=1685622146541&signature=qcZLVPFGrw2gNHKXpy3ZESoQuMtRF4LrfJJ1qVI5ibw&downloadName=iamge_v3.png)
 
 ### 🚀 Answer
 
@@ -151,7 +153,9 @@ function arrayPairSum(nums) {
 >
 > Given the integer n, return _the number of **complete rows** of the staircase you will build_.
 >
-> **Example:** > ![img](https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4bd91cfa-d2b1-47b3-8197-a72e8dcfff4b%2Fv2.jpg?id=011c94c5-b725-4954-8821-3900e6c08ab4&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=510&userId=&cache=v2)
+> **Example:** >
+>
+> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4bd91cfa-d2b1-47b3-8197-a72e8dcfff4b%2Fv2.jpg?id=011c94c5-b725-4954-8821-3900e6c08ab4&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=510&userId=&cache=v2" style="display: inline-block; margin: 0 auto; max-width: 300px">
 >
 > - Input: n = 5
 > - Output: 2
@@ -206,8 +210,10 @@ function sortedSquares(nums) {
 > You are given an m x n matrix M initialized with all 0's and an array of operations ops, where ops[i] = [ai, bi] means M[x][y] should be incremented by one for all 0 <= x < ai and 0 <= y < bi.
 >
 > Count and return _the number of maximum integers in the matrix after performing all the operations_ >
-
-> **Example:** > ![img](https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4d0890d0-7bc7-4f59-be8e-352d9f3c1c52%2Fq4.jpg?id=90aeb3cb-54bb-4240-9291-1fce694e3fe9&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1020&userId=&cache=v2)
+>
+> **Example:**
+>
+> ![img](https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4d0890d0-7bc7-4f59-be8e-352d9f3c1c52%2Fq4.jpg?id=90aeb3cb-54bb-4240-9291-1fce694e3fe9&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1020&userId=&cache=v2)
 >
 > - Input: m = 3, n = 3, ops = [[2,2],[3,3]]
 > - Output: 4
