@@ -12,7 +12,7 @@
 >
 > **Example:**
 >
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fde7ec927-9e60-4545-9475-f3ee31116192%2FScreenshot_2023-05-29_004311.png?id=371a0653-5ed2-4a22-a9de-00d4d4c3479d&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1410&userId=&cache=v2" style="max-height: 200px">
+> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fde7ec927-9e60-4545-9475-f3ee31116192%2FScreenshot_2023-05-29_004311.png?id=371a0653-5ed2-4a22-a9de-00d4d4c3479d&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1410&userId=&cache=v2" style="height: 200px">
 >
 > - Input: original = [1,2,3,4], m = 2, n = 2
 > - Output: [[1,2],[3,4]]
@@ -153,7 +153,7 @@ function findDistinctIntegers(nums1, nums2) {
 > **Explanation:**
 >
 > **For arr1[0]=4 we have:**
-
+>
 > - |4-10|=6 > d=2
 > - |4-9|=5 > d=2
 > - |4-1|=3 > d=2
