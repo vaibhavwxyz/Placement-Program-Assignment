@@ -1,80 +1,215 @@
-# Assignment 05- 2D Arrays
+# Assignment 07- Strings
 
 ## 💡 Question 01
 
-> A permutation perm of n + 1 integers of all the integers in the range [0, n] can be represented as a string s of length n where:
+> Given two strings s and t, _determine if they are isomorphic_.
 >
-> - s[i] == 'I' if perm[i] < perm[i + 1], and
-> - s[i] == 'D' if perm[i] > perm[i + 1].
+> Two strings s and t are isomorphic if the characters in s can be replaced to get t.
 >
-> Given a string s, reconstruct the permutation perm and return it. If there are multiple valid permutations perm, return **any of them**.
->
-> **Example:**
->
-> - Input: s = "IDID"
-> - Output:[0,4,1,3,2]
-
-### 🚀 Answer
-
-```javascript
-function reconstructPermutation(s) {
-  const n = s.length;
-  const permutation = [];
-  let low = 0;
-  let high = n;
-
-  for (let i = 0; i < n; i++) {
-    if (s[i] === "I") {
-      permutation.push(low++);
-    } else {
-      permutation.push(high--);
-    }
-  }
-
-  permutation.push(low);
-
-  return permutation;
-}
-```
-
-## 💡 Question 02
-
-> You are given an m x n integer matrix matrix with the following two properties:
->
-> - Each row is sorted in non-decreasing order.
-> - The first integer of each row is greater than the last integer of the previous row.
->
-> Given an integer target, return true _if_ target _is in_ matrix _or_ false _otherwise_.
->
-> You must write a solution in O(log(m \* n)) time complexity.
+> All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
 >
 > **Example:**
 >
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe4b0271f-15f0-4744-826b-18500ccfcb75%2FScreenshot_2023-05-29_005303.png?id=18335e94-20ec-483d-96ef-563d86305ec3&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=840&userId=&cache=v2" style="height: 200px; width: 200px">
->
-> - Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+> - Input: s = "egg", t = "add"
 > - Output: true
 
 ### 🚀 Answer
 
 ```javascript
-function searchMatrix(matrix, target) {
-  const m = matrix.length;
-  const n = matrix[0].length;
-  let low = 0;
-  let high = m * n - 1;
+function isIsomorphic(s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
 
-  while (low <= high) {
-    const mid = Math.floor((low + high) / 2);
-    const row = Math.floor(mid / n);
-    const col = mid % n;
+  const sMap = new Map();
+  const tMap = new Map();
 
-    if (matrix[row][col] === target) {
+  for (let i = 0; i < s.length; i++) {
+    const charS = s[i];
+    const charT = t[i];
+
+    if (
+      (sMap.has(charS) && sMap.get(charS) !== charT) ||
+      (tMap.has(charT) && tMap.get(charT) !== charS)
+    ) {
+      return false;
+    }
+
+    sMap.set(charS, charT);
+    tMap.set(charT, charS);
+  }
+
+  return true;
+}
+```
+
+## 💡 Question 02
+
+> Given a string num which represents an integer, return true _if_ num is a _**strobogrammatic number**_.
+>
+> A **strobogrammatic number** is a number that looks the same when rotated 180 degrees (looked at upside down).
+>
+> **Example:**
+>
+> - Input: num = "69"
+> - Output: true
+
+### 🚀 Answer
+
+```javascript
+function isStrobogrammatic(num) {
+  const map = new Map([
+    ["0", "0"],
+    ["1", "1"],
+    ["6", "9"],
+    ["8", "8"],
+    ["9", "6"],
+  ]);
+
+  let left = 0;
+  let right = num.length - 1;
+
+  while (left <= right) {
+    if (!map.has(num[left]) || map.get(num[left]) !== num[right]) {
+      return false;
+    }
+
+    left++;
+    right--;
+  }
+
+  return true;
+}
+```
+
+## 💡 Question 03
+
+> Given two non-negative integers, num1 and num2 represented as string, return _the sum of_ num1 _and_ num2 _as a string_.
+>
+> You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
+>
+> **Example:**
+>
+> - Input: num1 = "11", num2 = "123"
+> - Output: "134"
+
+### 🚀 Answer
+
+```javascript
+function addStrings(num1, num2) {
+  let i = num1.length - 1;
+  let j = num2.length - 1;
+  let carry = 0;
+  let result = "";
+
+  while (i >= 0 || j >= 0 || carry > 0) {
+    let sum = carry;
+
+    if (i >= 0) {
+      sum += parseInt(num1[i]);
+      i--;
+    }
+
+    if (j >= 0) {
+      sum += parseInt(num2[j]);
+      j--;
+    }
+
+    carry = Math.floor(sum / 10);
+    sum = sum % 10;
+    result = sum + result;
+  }
+
+  return result;
+}
+```
+
+## 💡 Question 04
+
+> Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+>
+> **Example:**
+>
+> - Input: s = "Let's take LeetCode contest"
+> - Output: "s'teL ekat edoCteeL tsetnoc"
+
+### 🚀 Answer
+
+```javascript
+function reverseWords(s) {
+  const words = s.split(" ");
+
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].split("").reverse().join("");
+  }
+
+  return words.join(" ");
+}
+```
+
+## 💡 Question 05
+
+> Given a string s and an integer k, reverse the first k characters for every 2k characters counting from the start of the string.
+>
+> If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and leave the other as original.
+>
+> **Example:**
+>
+> - Input: s = "abcdefg", k = 2
+> - Output: "bacdfeg"
+
+### 🚀 Answer
+
+```javascript
+function reverseStr(s, k) {
+  const arr = s.split("");
+
+  for (let i = 0; i < arr.length; i += 2 * k) {
+    let start = i;
+    let end = Math.min(i + k - 1, arr.length - 1);
+
+    while (start < end) {
+      const temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+    }
+  }
+
+  return arr.join("");
+}
+```
+
+## 💡 Question 06
+
+> Given two strings s and goal, return true _if and only if_ s _can become_ goal _after some number of **shifts** on_ s.
+>
+> A **shift** on s consists of moving the leftmost character of s to the rightmost position.
+>
+> - For example, if s = "abcde", then it will be "bcdea" after one shift.
+>
+> **Example:**
+>
+> - Input: s = "abcde", goal = "cdeab"
+> - Output: true
+
+### 🚀 Answer
+
+```javascript
+function rotateString(s, goal) {
+  if (s.length !== goal.length) {
+    return false;
+  }
+
+  if (s === goal) {
+    return true;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const rotatedString = s.slice(i) + s.slice(0, i);
+    if (rotatedString === goal) {
       return true;
-    } else if (matrix[row][col] < target) {
-      low = mid + 1;
-    } else {
-      high = mid - 1;
     }
   }
 
@@ -82,249 +217,71 @@ function searchMatrix(matrix, target) {
 }
 ```
 
-## 💡 Question 03
-
-> Given an array of integers arr, return _true if and only if it is a valid mountain array_.
->
-> Recall that arr is a mountain array if and only if:
->
-> - arr.length >= 3
-> - There exists some i with 0 < i < arr.length - 1 such that:
->   - arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
->   - arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
->
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5565e778-ac57-4ced-85a2-ccb13268bdf6%2FScreenshot_2023-05-29_005352.png?id=8965a667-69ac-4fdc-af94-ff9a6a42de08&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1600&userId=&cache=v2" style="height: 220px">
->
-> **Example:**
->
-> - Input: arr = [2,1]
-> - Output: false
-
-### 🚀 Answer
-
-```javascript
-function validMountainArray(arr) {
-  const n = arr.length;
-  let i = 0;
-
-  while (i + 1 < n && arr[i] < arr[i + 1]) {
-    i++;
-  }
-
-  if (i === 0 || i === n - 1) {
-    return false;
-  }
-
-  while (i + 1 < n && arr[i] > arr[i + 1]) {
-    i++;
-  }
-
-  return i === n - 1;
-}
-```
-
-## 💡 Question 04
-
-> Given a binary array nums, return _the maximum length of a contiguous subarray with an equal number of_ 0 _and_ 1.
->
-> **Example:**
->
-> - Input: nums = [0,1]
-> - Output: 2
->
-> **Explanation:**
->
-> - [0, 1] is the longest contiguous subarray with an equal number of 0 and 1.
-
-### 🚀 Answer
-
-```javascript
-function findMaxLength(nums) {
-  const map = new Map();
-  map.set(0, -1);
-  let maxLength = 0;
-  let count = 0;
-
-  for (let i = 0; i < nums.length; i++) {
-    count += nums[i] === 1 ? 1 : -1;
-
-    if (map.has(count)) {
-      maxLength = Math.max(maxLength, i - map.get(count));
-    } else {
-      map.set(count, i);
-    }
-  }
-
-  return maxLength;
-}
-```
-
-## 💡 Question 05
-
-> The **product sum** of two equal-length arrays a and b is equal to the sum of a[i] \* b[i] for all 0 <= i < a.length (**0-indexed**).
->
-> - For example, if a = [1,2,3,4] and b = [5,2,3,1], the **product sum** would be 1\*5 + 2\*2 + 3\*3 + 4\*1 = 22.
->
-> Given two arrays nums1 and nums2 of length n, return _the **minimum product sum** if you are allowed to **rearrange** the **order** of the elements in_ nums1.
->
-> **Example:**
->
-> - Input: nums1 = [5,3,4,2], nums2 = [4,2,2,5]
-> - Output: 40
->
-> **Explanation:**
->
-> We can rearrange nums1 to become [3,5,4,2]. The product sum of [3,5,4,2] and [4,2,2,5] is 3\*4 + 5\*2 + 4\*2 + 2\*5 = 40.
-
-### 🚀 Answer
-
-```javascript
-function minProductSum(nums1, nums2) {
-  nums1.sort((a, b) => a - b);
-  nums2.sort((a, b) => b - a);
-  let minProductSum = 0;
-
-  for (let i = 0; i < nums1.length; i++) {
-    minProductSum += nums1[i] * nums2[i];
-  }
-
-  return minProductSum;
-}
-```
-
-## 💡 Question 06
-
-> An integer array original is transformed into a **doubled** array changed by appending **twice the value** of every element in original, and then randomly **shuffling** the resulting array.
->
-> Given an array changed, return original _if_ changed _is a **doubled** array. If_ changed _is not a **doubled** array, return an empty array. The elements in_ original _may be returned in **any** order_.
->
-> **Example:**
->
-> - Input: changed = [1,3,4,2,6,8]
-> - Output: [1,3,4]
->
-> **Explanation:** One possible original array could be [1,3,4]:
->
-> - Twice the value of 1 is 1 \* 2 = 2.
-> - Twice the value of 3 is 3 \* 2 = 6.
-> - Twice the value of 4 is 4 \* 2 = 8.
->
-> Other original arrays could be [4,3,1] or [3,1,4].
-
-### 🚀 Answer
-
-```javascript
-function findOriginalArray(changed) {
-  if (changed.length % 2 !== 0) {
-    return [];
-  }
-
-  const counts = new Map();
-
-  for (const num of changed) {
-    counts.set(num, (counts.get(num) || 0) + 1);
-  }
-
-  const original = [];
-
-  changed.sort((a, b) => a - b);
-
-  for (const num of changed) {
-    if (counts.get(num) === 0) {
-      continue;
-    }
-
-    const doubledNum = num * 2;
-
-    if (counts.get(doubledNum) === 0) {
-      return [];
-    }
-
-    original.push(num);
-    counts.set(num, counts.get(num) - 1);
-    counts.set(doubledNum, counts.get(doubledNum) - 1);
-  }
-
-  return original;
-}
-```
-
 ## 💡 Question 07
 
-> Given a positive integer n, generate an n x n matrix filled with elements from 1 to n2 in spiral order.
+> Given two strings s and t, return true _if they are equal when both are typed into empty text editors_. '#' means a backspace character.
+>
+> Note that after backspacing an empty text, the text will continue empty.
 >
 > **Example:**
 >
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00c8517f-7682-4e0b-bdd9-ce0e087f3f94%2FScreenshot_2023-05-29_005522.png?id=4c411eff-717a-4ce4-8727-1c101816bbad&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=670&userId=&cache=v2" style="height: 220px; width: 220px">
+> - Input: s = "ab#c", t = "ad#c"
+> - Output: true
 >
-> - Input: n = 3
-> - Output: [[1,2,3],[8,9,4],[7,6,5]]
+> **Explanation:**
+>
+> - Both s and t become "ac".
 
 ### 🚀 Answer
 
 ```javascript
-function generateMatrix(n) {
-  const matrix = Array.from({ length: n }, () => Array(n).fill(0));
-  let left = 0,
-    right = n - 1,
-    top = 0,
-    bottom = n - 1;
-  let num = 1;
+function backspaceCompare(s, t) {
+  return buildString(s) === buildString(t);
+}
 
-  while (num <= n * n) {
-    for (let i = left; i <= right; i++) {
-      matrix[top][i] = num++;
-    }
-    top++;
+function buildString(str) {
+  const result = [];
 
-    for (let i = top; i <= bottom; i++) {
-      matrix[i][right] = num++;
+  for (let char of str) {
+    if (char !== "#") {
+      result.push(char);
+    } else {
+      result.pop();
     }
-    right--;
-
-    for (let i = right; i >= left; i--) {
-      matrix[bottom][i] = num++;
-    }
-    bottom--;
-
-    for (let i = bottom; i >= top; i--) {
-      matrix[i][left] = num++;
-    }
-    left++;
   }
 
-  return matrix;
+  return result.join("");
 }
 ```
 
 ## 💡 Question 08
 
-> Given two [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) mat1 of size m x k and mat2 of size k x n, return the result of mat1 x mat2. You may assume that multiplication is always possible.
+You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents the coordinate of a point. Check if these points make a straight line in the XY plane.
+
+**Example:**
+
+> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F012b0a97-4e4b-49b6-bc95-0531fc712978%2FScreenshot_2023-05-29_010117.png?id=8a930c97-96e8-422d-a84b-5b7553bf198e&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=930&userId=&cache=v2" style="height: 220px">
 >
-> **Example:**
->
-> <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdf57e793-12bf-4104-a17b-4e6a88dc7955%2FScreenshot_2023-05-29_005557.png?id=bf7064e0-6a34-4089-bad4-dfd954e546c4&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=1320&userId=&cache=v2" style="height: 220px">
->
-> - Input: mat1 = [[1,0,0],[-1,0,3]], mat2 = [[7,0,0],[0,0,0],[0,0,1]]
-> - Output: [[7,0,0],[-7,0,3]]
+> - Input: coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
+> - Output: true
 
 ### 🚀 Answer
 
 ```javascript
-function multiply(mat1, mat2) {
-  const m = mat1.length;
-  const k = mat1[0].length;
-  const n = mat2[0].length;
-  const result = Array.from({ length: m }, () => Array(n).fill(0));
+function checkStraightLine(coordinates) {
+  const [x0, y0] = coordinates[0];
+  const [x1, y1] = coordinates[1];
+  const slope = (y1 - y0) / (x1 - x0);
 
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      for (let l = 0; l < k; l++) {
-        result[i][j] += mat1[i][l] * mat2[l][j];
-      }
+  for (let i = 2; i < coordinates.length; i++) {
+    const [x, y] = coordinates[i];
+    const currentSlope = (y - y0) / (x - x0);
+
+    if (currentSlope !== slope) {
+      return false;
     }
   }
 
-  return result;
+  return true;
 }
 ```
