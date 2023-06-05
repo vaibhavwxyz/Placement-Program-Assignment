@@ -256,10 +256,10 @@ function buildString(str) {
 
 ## 💡 Question 08
 
-You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents the coordinate of a point. Check if these points make a straight line in the XY plane.
-
-**Example:**
-
+> You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents the coordinate of a point. Check if these points make a straight line in the XY plane.
+>
+> **Example:**
+>
 > <img src="https://pwskills.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F012b0a97-4e4b-49b6-bc95-0531fc712978%2FScreenshot_2023-05-29_010117.png?id=8a930c97-96e8-422d-a84b-5b7553bf198e&table=block&spaceId=6fae2e0f-dedc-48e9-bc59-af2654c78209&width=930&userId=&cache=v2" style="height: 220px">
 >
 > - Input: coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
