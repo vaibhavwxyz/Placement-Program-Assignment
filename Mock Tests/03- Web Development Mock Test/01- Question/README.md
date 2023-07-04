@@ -1,4 +1,6 @@
-# Explain all the CSS positions(static, fixed, sticky, relative, absolute) with one code example each
+# 💡 Question: Explain all the CSS positions(static, fixed, sticky, relative, absolute) with one code example each
+
+## 🚀 Answer:
 
 **CSS provides several positioning options for elements. Understanding these positions is essential for controlling the layout and positioning of elements on a web page. Here are the commonly used CSS positions:**
 

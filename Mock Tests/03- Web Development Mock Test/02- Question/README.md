@@ -1,6 +1,6 @@
-## Create a form with basic validation (name, email, phone number, password, age, gender, date, color picker)
+# 💡Question: Create a form with basic validation (name, email, phone number, password, age, gender, date, color picker)
 
-### Answer 🚀
+## 🚀 Answer:
 
 ```html
 <!DOCTYPE html>

@@ -1,4 +1,6 @@
-## Explain what is execution context in detail with diagram
+## 💡 Question: Explain what is execution context in detail with diagram
+
+### 🚀 Answer:
 
 **Execution context is an important concept in JavaScript that helps manage the execution of code. It provides an environment in which JavaScript code is executed and variables, functions, and objects are stored and accessed. Each time a function is called or a block of code is executed, a new execution context is created.**
 
