@@ -1,0 +1,24 @@
+## 💡 Q.7 Create a simple Music player using html only
+
+### 🚀 Answer
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div style="padding-top: 30px">
+      <h1>Listen to the Music</h1>
+      <audio
+        controls
+        src="https://cld3097web.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
+      ></audio>
+    </div>
+  </body>
+</html>
+```
