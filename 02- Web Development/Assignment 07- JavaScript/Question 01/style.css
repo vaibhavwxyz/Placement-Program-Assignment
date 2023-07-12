@@ -1,0 +1,51 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+#quiz {
+  margin-bottom: 20px;
+}
+
+.popup {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+#popup-button {
+  margin-top: 10px;
+}
+
+#leaderboard {
+  text-align: left;
+}
+
+#leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+#leaderboard th,
+#leaderboard td {
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.hidden {
+  display: none;
+}
