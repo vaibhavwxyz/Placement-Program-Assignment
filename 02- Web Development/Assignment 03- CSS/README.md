@@ -96,3 +96,31 @@ By using the `orientation` media feature, you can make specific adjustments to y
 ## 💡 Q.6 Imagine you are a web developer working for a creative agency that specializes in building visually appealing and interactive websites. The agency has recently received a client request to create a landing page similar to the design of the one-page website: https://www.getonecard.app/. The client wants to showcase a video prominently on the page to engage visitors.
 
 Your task is to create a simple webpage that replicates the one-page landing page design, including a responsive layout and an HTML video. The below images are for your reference. Some browsers don’t allow you to play videos without the controls attribute. So, you can add controls here, we will learn how to play a video without the controls attribute in the later sections.
+
+### 🚀 Answer
+
+**To see project in action, visit [https://onecard-by-vaibhav.netlify.app/](https://onecard-by-vaibhav.netlify.app/)**
+
+## 💡 Q.7 You are tasked with building a webpage that displays an image gallery using a grid layout. The challenge is to ensure the gallery is visually appealing and functional on both large and small screens. On large screens, the gallery should display multiple images per row, while on small screens, it should collapse into a single column for optimal viewing. Refer to the attached images for visual reference. Implement this using CSS Grid and media queries for responsiveness.
+
+### 🚀 Answer
+
+**To see project in action, visit [https://random-image-using-grid.netlify.app/](https://random-image-using-grid.netlify.app/)**
+
+## 💡 Q.8 In this coding challenge, your task is to create an information section for the previously built OneCard webpage clone, focusing on the different modes like dark and light modes. The webpage should look different depending on the screen size: dark mode for larger screens and light mode for smaller devices. The reference images are attached below.
+
+### 🚀 Answer
+
+**To see project in action, visit [https://onecard2-by-vaibhav.netlify.app/](https://onecard2-by-vaibhav.netlify.app/)**
+
+## 💡 Q.9 You have reached the final task of learning responsive web design, which involves designing a responsive footer. Your goal is to build a simple webpage footer that matches the design shown in the attached image. The footer should adapt to different screen sizes, ensuring optimal visibility and alignment of the content. Refer to the attached image for a visual reference.
+
+### 🚀 Answer
+
+**To see project in action, visit [https://onecard2-by-vaibhav.netlify.app/](https://onecard2-by-vaibhav.netlify.app/)**
+
+## 💡 Q.10 You have been given to create a student dashboard page that includes a student details table. The challenge lies in handling the table's display on different screen sizes. On large screens, the table should be fully visible, while on small screens, it should have an internal scroll to ensure proper visibility of information. Refer to the attached images for visual reference.
+
+### 🚀 Answer
+
+**To see project in action, visit [https://student-detail-table-by-vaibhav.netlify.app/](https://student-detail-table-by-vaibhav.netlify.app/)**
