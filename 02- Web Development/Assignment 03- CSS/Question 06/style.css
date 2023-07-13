@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 1rem 16rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > svg {
+  max-width: 5rem;
+}
+
+ul {
+  display: flex;
+  gap: 2rem;
+}
+
+ul > li {
+  font-family: "Poppins", "san-serif";
+  list-style-type: none;
+  font-weight: 500;
+}
+
+.nav-right-side {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #1893f7;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", "san-serif";
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #1085ed;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.main-left-side {
+  font-family: "Poppins", "san-serif";
+}
+
+main > div > h1 > span {
+  color: #1892f7;
+}
+
+#card-issuers {
+  color: #1892f7;
+}
+
+.apply-img {
+  width: 16rem;
+  cursor: pointer;
+}
+
+main > div > img {
+  width: 20rem;
+}
+
+video {
+  width: 510px;
+}
+
+@media screen and (max-width: 620px) {
+  body {
+    margin: 10px 20px;
+  }
+
+  ul > li {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main {
+    flex-direction: column;
+  }
+}
