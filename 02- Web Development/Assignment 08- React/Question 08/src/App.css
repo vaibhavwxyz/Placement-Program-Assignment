@@ -1,0 +1,17 @@
+.pink-box {
+  background-color: #fff2f4;
+  border-radius: 10px;
+  height: 700px;
+  width: 700px;
+}
+
+.red-box {
+  background-color: #ff4957;
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.count {
+  text-align: center;
+}
